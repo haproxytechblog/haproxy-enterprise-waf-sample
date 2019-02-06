@@ -25,7 +25,6 @@ resource "aws_instance" "haproxy" {
     inline = [
         "sudo cp -f /home/ubuntu/hapee-lb.cfg /etc/hapee-1.8/hapee-lb.cfg",
         "sudo systemctl reload hapee-1.8-lb",
-        "sudo apt install -y skipfish > /dev/null"
     ]
   }
 }
