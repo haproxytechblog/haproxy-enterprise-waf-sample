@@ -19,13 +19,8 @@ data "aws_ami" "haproxy_enterprise" {
   most_recent = true
 
   filter {
-    name = "product-code"
-    values = ["483gxnuft87jy44d3q8n4kvt1"]
-  }
-
-  filter {
     name = "name"
-    values = ["hapee-ubuntu-xenial-amd64-hvm-1.8*"]
+    values = ["hapee-ubuntu*"]
   }
 
   owners = ["aws-marketplace"]
