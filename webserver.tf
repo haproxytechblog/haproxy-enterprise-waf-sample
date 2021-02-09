@@ -16,16 +16,15 @@ resource "aws_instance" "webserver" {
     private_key = "${file("./${var.ssh_keypair_name}.pem")}"
   }
 
+  provisioner "file" {
+    source      = "./install_dvwa.sh"
+    destination = "/tmp/install_dvwa.sh"
+  }
+
   provisioner "remote-exec" {
     inline = [
-        "echo 127.0.0.1 $(hostname) | sudo tee -a /etc/hosts",
-        "sudo apt update > /dev/null",
-        "sudo apt install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common > /dev/null",
-        "curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -",
-        "sudo add-apt-repository \"deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable\"",
-        "sudo apt update > /dev/null",
-        "sudo apt install -y docker-ce > /dev/null",
-        "sudo docker run --name dvwa -d -p 80:80 vulnerables/web-dvwa",
+        "chmod +x /tmp/install_dvwa.sh",
+        "sudo /tmp/install_dvwa.sh",
     ]
   }
 }

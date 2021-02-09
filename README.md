@@ -7,6 +7,7 @@ Demonstrates using the HAProxy Enterprise WAF module.
 Follow these steps:
 
 1. In the [AWS Console](https://console.aws.amazon.com), create a new SSH keypair via **EC2 > Key Pairs > Create Key Pair**. Name the keypair *haproxy_demo*. Save the PEM file to this project's directory.
+2. Update the **variables.tf** file so that its *aws_region` variable specifies the AWS region where you created your SSH key pair. Note that not all regions support all instance sizes.
 3. Install Terraform and then run:
 
 ```

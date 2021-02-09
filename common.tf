@@ -9,7 +9,7 @@ data "aws_ami" "ubuntu" {
 
   filter {
     name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server*"]
+    values = ["ubuntu/images/hvm-ssd/ubuntu-groovy-20.10-amd64-server*"]
   }
 
   owners = ["099720109477"]
@@ -20,12 +20,12 @@ data "aws_ami" "haproxy_enterprise" {
 
   filter {
     name = "product-code"
-    values = ["483gxnuft87jy44d3q8n4kvt1"]
+    values = ["81qyn6kfbmh8l61y5k8zusy8c"]
   }
 
   filter {
     name = "name"
-    values = ["hapee-ubuntu-xenial-amd64-hvm-1.8*"]
+    values = ["hapee-ubuntu-focal-amd64-hvm-2.2*"]
   }
 
   owners = ["aws-marketplace"]

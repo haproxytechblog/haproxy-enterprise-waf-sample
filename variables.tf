@@ -1,11 +1,11 @@
 variable "aws_region" {
   description = "AWS region"
-  default     = "us-east-1"
+  default     = "us-east-2"
 }
 
 variable "aws_instance_type" {
   description = "AWS instance type for nodes"
-  default     = "t2.small"
+  default     = "t3.nano"
 }
 
 variable "aws_access_key" {}

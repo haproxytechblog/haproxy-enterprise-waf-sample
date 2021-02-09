@@ -23,8 +23,8 @@ resource "aws_instance" "haproxy" {
 
   provisioner "remote-exec" {
     inline = [
-        "sudo cp -f /home/ubuntu/hapee-lb.cfg /etc/hapee-1.8/hapee-lb.cfg",
-        "sudo systemctl reload hapee-1.8-lb",
+        "sudo cp -f /home/ubuntu/hapee-lb.cfg /etc/hapee-2.2/hapee-lb.cfg",
+        "sudo systemctl reload hapee-2.2-lb",
     ]
   }
 }
